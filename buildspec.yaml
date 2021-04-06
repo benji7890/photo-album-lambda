@@ -1,0 +1,9 @@
+version: 0.2  
+phases:  
+  install:
+    commands:
+      - aws cloudformation package --template-file index-photos.yaml --s3-bucket ben-photos --output-template-file photo-album-lambda.yaml
+artifacts:  
+  type: zip
+  files:
+    - photo-album-lambda.yaml
